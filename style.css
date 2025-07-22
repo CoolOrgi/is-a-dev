@@ -106,15 +106,11 @@ body {
 .animated-arrow-link {
     display: inline-block;
     color: #fff;
-    padding: 1rem;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s ease;
     animation: bounce 2s infinite;
 }
 
 .animated-arrow-link:hover {
-    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-5px);
     animation: none;
 }
@@ -129,4 +125,17 @@ body {
     60% {
         transform: translateY(-5px);
     }
+}
+
+#mobile-menu-overlay {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateX(100%);
+}
+
+#mobile-menu-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
 }
